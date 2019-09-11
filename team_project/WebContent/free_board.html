@@ -3,21 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	
 </script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="./css/temp.css?1">
 <title>코디 만들기</title>
 
+<script type="text/javascript">
+	$(function() {
+		$('#write_btn').click(function() {
+			let id = 1;
+			let name = '홍길동';
+			let title = '안녕';
+			let isimg = 'o';
+			let date = '19.09.11';
+			let count = '1';
+			$('tbody').append('<tr text-align="left"><td>' + id + '</td><td>' + name + '</td><td>'
+					+ title + '</td><td>'+ isimg + '</td><td>'+ date + '</td><td>'
+					+ count + '</td></tr>');
+		});
+	});
+</script>
 </head>
 <body>
-<header>
+	<header>
 		<hgroup>
-			<h1><a href="./index.html">2조 홈페이지</a></h1>
-			<h4><a href="./login.html" class="login">로그인</a>
-			<a href="./signup.html" class="login">회원가입</a></h4>
+			<h1>
+				<a href="./index.html">2조 홈페이지</a>
+			</h1>
+			<h4>
+				<a href="./login.html" class="login">로그인</a> <a href="./signup.html"
+					class="login">회원가입</a>
+			</h4>
 		</hgroup>
 	</header>
 	<nav>
@@ -26,10 +49,9 @@
 			<li><a href="./coordi_board.html">코디</a></li>
 			<li><a href="./free_board.html">자유게시판</a></li>
 			<li><a href="./make_coordi.html">코디만들기</a></li>
-		</ul>	
+		</ul>
 	</nav>
-	<aside id="mypage" class="w3-ul w3-border">
-	</aside>
+	<aside id="mypage" class="w3-ul w3-border"></aside>
 	<div id="main">
 		<table class="table">
 			<thead>
@@ -43,15 +65,13 @@
 				</tr>
 			</thead>
 			<tbody>
-			
-			</tbody>		
+
+			</tbody>
 		</table>
-		<a class="btn btn-default pull-right"> 글쓰기 </a>
+		<a id="write_btn" class="btn btn-default pull-right"> 글쓰기 </a>
 	</div>
-	
-	<footer>
-	footer
-	</footer>
-	
+
+	<footer> footer </footer>
+
 </body>
 </html>
