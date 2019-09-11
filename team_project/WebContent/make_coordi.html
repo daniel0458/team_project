@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./css/temp.css?8">
+<link rel="stylesheet" href="./css/make_coordi.css?4">
+ 
+<title>코디 만들기</title>
+<script type="text/javascript">
+
+function handleDragStart(e) {
+	e.dataTransfer.effectAllowed = 'move';
+	e.dataTransfer.setData("Text",e.target.id);
+}
+function handleDrop(e) {
+	e.preventDefault();
+	let src = e.dataTransfer.getData("Text");
+	e.target.appendChild(document.getElementById(src));
+
+}
+
+function allowDrop(e) {
+	e.preventDefault();
+}
+
+</script>
+</head>
+<body>
+<header>
+		<hgroup>
+			<h1><a href="./index.html">2조 홈페이지</a></h1>
+			<h4><a href="./login.html" class="login">로그인</a>
+			<a href="./signup.html" class="login">회원가입</a></h4>
+		</hgroup>
+	</header>
+	<nav>
+		<ul id="menu" class="w3-ul w3-border">
+			<li><a href="mypage.html">마이페이지</a></li>
+			<li><a href="./coordi_board.html">코디</a></li>
+			<li><a href="./free_board.html">자유게시판</a></li>
+			<li><a href="./make_coordi.html">코디만들기</a></li>
+		</ul>	
+	</nav>
+	<aside ondrop="handleDrop(event)" ondragover="allowDrop(event)" class="w3-ul w3-border">
+		<button id="save_cd">코디 저장</button> <br><br>
+		<img alt="no image" id="image1" src="./img/cute.gif" draggable="true" ondragstart="handleDragStart(event)">
+		<img alt="no image" id="image2" src="./img/kakao0.jpg" draggable="true" ondragstart="handleDragStart(event)">
+		<img alt="no image" id="image3" src="./img/kakao1.jpg" draggable="true" ondragstart="handleDragStart(event)">
+	</aside>
+	<div id="main" class="cd_box" ondrop="handleDrop(event)" ondragover="allowDrop(event)">
+
+		
+	</div>
+	
+	<footer>
+	footer
+	</footer>
+	
+</body>
+</html>

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+form {
+	margin-top: 10em;
+}
+table {
+	margin: auto auto;	
+}
+td {
+	text-align: left;
+}
+#role {
+	text-align: center;
+}

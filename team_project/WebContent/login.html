@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link rel="stylesheet" href="./css/temp.css?1">
+ <link rel="stylesheet" href="./css/login.css">
+<title>Insert title here</title>
+
+</head>
+<body>
+<header>
+		<hgroup>
+			<h1><a href="./index.html">2조 홈페이지</a></h1>
+			<h4><a href="./login.html" class="login">로그인</a>
+			<a href="./signup.html" class="login">회원가입</a></h4>
+		</hgroup>
+	</header>
+	<aside id="mypage" class="w3-ul w3-border">
+	</aside>
+	<div>
+	<form action="" method="get">
+		<table border="1">
+			<tr>
+				<td> <label for="id"> ID</label> </td>
+				<td> <input type="text" id="id" name="id" required="required"/></td>
+			</tr>
+			<tr>
+				<td> <label for="pw"> PW</label></td>
+				<td> <input type="password" id="pw" name="pw" required="required"
+				pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{5,}"/></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="login">
+					<input type="reset" value="cancel">
+					<a href="users.html">회원 가입</a>
+				</td>
+			</tr>
+		</table>
+	</form>
+	</div>
+	<footer>
+	footer
+	</footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	
+</script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./css/temp.css?1">
+<link rel="stylesheet" href="./css/signup.css?3">
+<title>회원 가입</title>
+<style>
+.error {
+	color: red;
+}
+</style>
+
+<script type="text/javascript">
+	let xdata;
+	log = console.log;
+	
+	$(function() {
+		$('#id_check').click(function() {
+			idcheck();
+		});
+		$('#pw_check').blur(function() {
+			let pw1 = $('#pw').val();
+			let pw2 = $('#pw_check').val();
+			
+			pwcheck(pw1,pw2);
+		})
+	});
+	
+	function idcheck() {
+		$.ajax({
+			url : 'json/id_check.jsp',
+			dataType : 'json',
+			data: {
+				id:$('#id').val()
+			},
+			success : function(data) {
+				//alert("~~~" + data.id)
+				//let xdata = data; 
+
+				if (data.id != undefined) {
+					//alert("중복");
+					$('#msg1').html("중복");
+					$('#msg1').css('color', 'red');
+				} else {
+					//alert("중복이 아님");
+					$('#msg1').html("중복이 아님");
+					$('#msg1').css('color', 'green');
+				}
+
+			},
+			error : function(e) {
+				alert('error : ' + e);
+			}
+		});
+	}
+	function pwcheck(pw1,pw2) {
+		if(pw1 != "" && pw2 != "") {
+			if (pw1 == pw2) {
+				$('#msg2').html("확인완료");
+				$('#msg2').css('color', 'green');
+			} else {
+				$('#msg2').html("불 일 치");
+				$('#msg2').css('color', 'red');
+			}
+		} else {
+			$('#msg2').html("pw미입력");
+			$('#msg2').css('color', 'red');
+		}
+	}
+</script>
+</head>
+<body>
+	<header>
+		<hgroup>
+			<h1>
+				<a href="./index.html">2조 홈페이지</a>
+			</h1>
+			<h4>
+				<a href="./login.html" class="login">로그인</a> <a href="./signup.html"
+					class="login">회원가입</a>
+			</h4>
+		</hgroup>
+	</header>
+	<aside id="mypage" class="w3-ul w3-border">
+	</aside>
+	<div>
+		<form action="adduser.jsp" method="post">
+		<table border="1">
+			<tr>
+				<td><label for="id"> ID</label></td>
+				<td><input type="text" id="id" name="id" /> 
+				<input type="button" id="id_check" value="id중복체크" /> <br> 
+					<span id="msg1" class="error"></span>
+					</td>
+
+			</tr>
+			<tr>
+				<td><label for="pw"> PW</label></td>
+				<td><input type="password" id="pw" name="pw" /></td>
+			</tr>
+			<tr>
+				<td><label for="pw_check"> PW확인</label></td>
+				<td><input type="password" id="pw_check" name="pw_check" /> 
+				<span id="msg2"></span></td>
+				
+			</tr>
+			<tr>
+				<td><label for="name"> name</label></td>
+				<td><input type="text" id="name" name="name" /></td>
+			</tr>
+			<tr>
+				<td><label for="role"> role</label></td>
+				<td id="role"><input type="radio" id="role1" name="role" value="USER">
+					user <input type="radio" id="role2" name="role" value="ADMIN">
+					admin</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="가입"> <input
+					type="reset" value="취소"></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+	<footer> footer </footer>
+</body>
+</html>

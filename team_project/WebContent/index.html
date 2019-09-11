@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./css/temp.css?4">
+<link rel="stylesheet" href="./css/main.css?3">
+
+<title>메인 페이지</title>
+
+<script >
+	$(function() {
+		if($('body').hasClass('login')) {
+			$('#mymenu').removeAttr('hidden');
+		}
+	})
+</script>
+
+</head>
+<body class="login">
+	<header>
+		<hgroup>
+			<h1><a href="./index.html">2조 홈페이지</a></h1>
+			<h4><a href="./login.html" class="login">로그인</a>
+			<a href="./signup.html" class="login">회원가입</a></h4>		</hgroup>
+	</header>
+	<nav>
+		<ul id="menu" class="w3-ul w3-border">
+			<li><a href="mypage.html">마이페이지</a></li>
+			<li><a href="./coordi_board.html">코디</a></li>
+			<li><a href="./free_board.html">자유게시판</a></li>
+			<li><a href="./make_coordi.html">코디만들기</a></li>
+		</ul>	
+	</nav>
+	<aside id="mypage" class="w3-ul w3-border">
+		<ul id=mymenu hidden="hidden">
+			<li><a href="">내글</a></li>
+			<li><a href="">내 코디</a></li>
+			<li><a href="">즐겨찾기</a></li>
+			<li><a href="">정보수정</a></li>
+			<li><a href="">탈퇴하기</a></li>
+		</ul>	
+	</aside>
+	<div id="main">
+		<section>
+			<article id="spring_pan" class="w3-panel">
+				<a href="spring_cd.html" title="봄코디">
+				<img alt="이미지 없음" src="./img/kakao1.jpg" class="profile" ></a>
+				<br>
+			</article>
+			<article class="w3-panel">
+				<a href="summer_cd.html" title="여름코디">
+				<img alt="이미지 없음" src="./img/kakao2.jpg" class="profile" ></a>
+				<br>
+			</article>
+			<article class="w3-panel">
+				<a href="fall_cd.html" title="가을코디">
+				<img alt="이미지 없음" src="./img/kakao3.jpg" class="profile" ></a>
+				<br>
+			</article>
+			<article class="w3-panel">
+				<a href="winter_cd.html" title="겨울코디">
+				<img alt="이미지 없음" src="./img/kakao4.jpg" class="profile" ></a>
+				<br>
+			</article>
+			
+		</section>
+	</div>
+	
+	<footer>
+	footer
+	</footer>
+	
+</body>
+</html>
